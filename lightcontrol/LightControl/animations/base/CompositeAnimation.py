@@ -15,13 +15,13 @@ class CompositeAnimation(object):
 		self._otherAnims = otherAnimations				# List of additional animations to run
 
 	def run(self):
-		# for animation in self._otherAnims: # Start background animations
-			# self._spawn(self.startBGAnimation, animation)
+		for animation in self._otherAnims: # Start background animations
+			self._spawn(self.startBGAnimation, animation)
 
 		self._primaryAnim.run() # Run primary animation
 
-		# for animation in self._otherAnims: # Stop all background animations
-			# animation.stop()
+		for animation in self._otherAnims: # Stop all background animations
+			animation.stop()
 
 
 	def startBGAnimation(self, animation):
