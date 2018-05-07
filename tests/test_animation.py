@@ -9,7 +9,7 @@ logging.basicConfig(level=logging.DEBUG)
 from config import *
 
 import fuselights
-LIGHT_ID = fuselights.bath_guest.lightID
+LIGHT_ID = 3
 
 animation = [
 	AnimationStep(controls, LIGHT_ID, RED, tsTime=10),
@@ -26,7 +26,7 @@ animation = [
 	AnimationStep(controls, LIGHT_ID, BLUE),
 ]
 
-def loopAnimation(lightID):
+def loopAnimation(lightID=0):
 	for i in range(10):
 		for step in animation:
 			step.triggerStep(lightID)
@@ -38,5 +38,4 @@ def spawn(f, *args):
 	t.start()
 
 if __name__ == '__main__':
-	spawn(loopAnimation, 6)
-	spawn(loopAnimation, 7)
+	spawn(loopAnimation)

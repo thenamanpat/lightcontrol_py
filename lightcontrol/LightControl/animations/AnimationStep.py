@@ -22,5 +22,6 @@ class AnimationStep(object):
 		if lightID != 0:
 			self._controls.setLight(lightID, self._color, transitionTime=self._tsTime)
 		else:	
-			self._controls.setLight(self._lightID, self._color, transitionTime=self._tsTime)
+			response = self._controls.setLight(self._lightID, self._color, transitionTime=self._tsTime)
+			print(response.json())
 		time.sleep(self._sTime)
